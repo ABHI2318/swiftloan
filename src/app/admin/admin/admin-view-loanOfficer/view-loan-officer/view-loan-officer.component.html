@@ -1,0 +1,56 @@
+<div class="container mt-4">
+    <h2>Loan Officers</h2>
+  
+    <!-- Filter Input -->
+    <div class="mb-3">
+        <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search by Name or Email">
+    </div>
+  
+    <!-- Page Size Selector -->
+    <div class="mb-3">
+        <label for="pageSize">Page Size: </label>
+        <select id="pageSize" class="form-control" [(ngModel)]="pageSize" (change)="changePageSize()">
+            <option *ngFor="let size of pageSizes" [value]="size">{{ size }}</option>
+        </select>
+    </div>
+  
+    <!-- Loan Officers Table -->
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Officer ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>PAN Card Number</th>
+                <th>Date of Birth</th>
+                <th>Contact Number</th>
+                <th>Gender</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let officer of loanOfficers | filter:searchText">
+                <td>{{ officer.officerId }}</td>
+                <td>{{ officer.firstName }}</td>
+                <td>{{ officer.lastName }}</td>
+                <td>{{ officer.email }}</td>
+                <td>{{ officer.pancardNumber }}</td>
+                <td>{{ officer.dob }}</td>
+                <td>{{ officer.contactNumber }}</td>
+                <td>{{ officer.gender }}</td>
+                <td>
+                  <button class="btn btn-outline-danger btn-sm" (click)="toggleDeleteLoanScheme(officer.officerId)">
+                    {{ officer.isdeleted ? 'Activate' : 'Deactivate' }}
+                  </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  
+    <!-- Pagination -->
+    <div *ngIf="totalPages > 1" class="pagination-container">
+        <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage <= 1" class="btn btn-primary">Previous</button>
+        <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage >= totalPages" class="btn btn-primary">Next</button>
+    </div>
+  </div>

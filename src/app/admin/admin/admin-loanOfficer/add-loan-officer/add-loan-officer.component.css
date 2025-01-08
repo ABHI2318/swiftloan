@@ -1,0 +1,94 @@
+/* Form container */
+.container {
+  max-width: 600px; /* Limit the width for a more centered layout */
+  background-color: #f8f9fa; /* Light background for the form */
+  padding: 30px;
+  border-radius: 8px; /* Rounded corners for the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  margin-top: 50px;
+}
+
+/* Form title */
+h2 {
+  text-align: center;
+  color: #007bff; /* Color for the title */
+  margin-bottom: 30px;
+}
+
+/* Input and select fields */
+input.form-control,
+select.form-select {
+  border-radius: 5px; /* Rounded corners for the inputs */
+  padding: 12px; /* Padding inside input fields */
+  font-size: 16px; /* Larger text for better readability */
+  border: 1px solid #ced4da; /* Light border color */
+  transition: border-color 0.3s ease;
+}
+
+/* Input focus state */
+input.form-control:focus,
+select.form-select:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
+}
+
+/* Form group for spacing */
+.mb-3 {
+  margin-bottom: 20px; /* Increased space between form controls */
+}
+
+/* Error messages */
+.text-danger {
+  font-size: 14px;
+  color: #dc3545; /* Red for error messages */
+  margin-top: 5px;
+}
+
+/* Submit button */
+button.btn-primary {
+  width: 100%; /* Full width button */
+  padding: 12px;
+  font-size: 18px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Submit button hover effect */
+button.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Small text for instructions and labels */
+label.form-label {
+  font-weight: bold; /* Bold labels */
+  color: #333; /* Dark text color for better visibility */
+}
+
+/* Modal Customization (If used) */
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button for modal */
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

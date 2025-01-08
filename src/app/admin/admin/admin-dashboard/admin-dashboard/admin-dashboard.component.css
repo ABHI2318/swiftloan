@@ -1,0 +1,41 @@
+/* Card Container */
+.card {
+  border-radius: 8px;
+  /* Keep the neutral box shadow or adjust color if desired */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for cards */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Text */
+.card-text {
+  font-size: 14px;
+  /* Slightly darker lavender text instead of generic gray */
+  color: #4a2b4a;
+  margin-bottom: 1rem;
+}
+
+/* Button Styling */
+.btn {
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  /* Pink‐lavender background for the button */
+  background-color: #d98cdc;
+  color: #fff;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+  /* Slightly darker shade on hover */
+  background-color: #c06ac0;
+  opacity: 0.9;
+}

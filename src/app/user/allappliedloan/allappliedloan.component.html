@@ -1,0 +1,83 @@
+<div class="applied-loans-container">
+  <h2 class="text-center mb-4">Applied Loans</h2>
+
+  <!-- Search Filter -->
+  <div class="d-flex justify-content-between mb-3">
+    <input 
+      type="text" 
+      class="form-control w-50" 
+      placeholder="Search by User ID or Loan Status" 
+      [(ngModel)]="searchTerm"
+    />
+  </div>
+
+  <!-- Applied Loans Table -->
+  <div *ngIf="filteredLoans.length > 0; else noLoans">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Serial No</th>
+            <th>Loan Name</th>
+            <th>Loan Amount</th>
+            <th>Loan Status</th>
+            <th>Monthly Repayment</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Apply search filter to the rows -->
+          <tr *ngFor="let loan of filteredLoans">
+            <td>{{ loan.loanid }}</td>
+            <td>{{ loan.loanscheme }}</td>
+            <td>{{ loan.loanamount | currency }}</td>
+            <td>{{ loan.loanstatus }}</td>
+            <td>{{ loan.monthlyRepayment | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination-controls d-flex justify-content-between align-items-center mt-3">
+      <button class="btn btn-outline-secondary" (click)="previousPage()" [disabled]="currentPage === 1">
+        Previous
+      </button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button class="btn btn-outline-secondary" (click)="nextPage()" [disabled]="currentPage === totalPages">
+        Next
+      </button>
+    </div>
+
+    <!-- Page Size Control -->
+    <div class="page-size-container mt-3">
+      <label for="pageSize">Items per page:</label>
+      <input 
+        id="pageSize" 
+        type="number" 
+        class="form-control w-auto d-inline-block" 
+        [(ngModel)]="pageSize" 
+        (change)="loadLoans(currentPage)" 
+        [min]="1" 
+        [max]="totalElements"
+      />
+    </div>
+
+    <!-- Page Info -->
+    <div class="page-info mt-3">
+      <p>
+        Showing {{ (currentPage - 1) * pageSize + 1 }} - 
+        {{ (currentPage * pageSize) > totalElements ? totalElements : (currentPage * pageSize) }} of {{ totalElements }} items
+      </p>
+    </div>
+  </div>
+
+  <!-- No Loans Found -->
+  <ng-template #noLoans>
+    <div class="alert alert-warning text-center">
+      No loans found.
+    </div>
+  </ng-template>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Pending Loan Requests</h1>
+
+  <div class="loan-cards">
+    <div class="loan-card" *ngFor="let loan of loans">
+      <div class="loan-header">
+        <strong>Loan ID:</strong> {{ loan.loanid }}
+      </div>
+      <div class="loan-body">
+        <p>
+          <strong>Aadhaar Card:</strong>
+          <a href="{{ loan.documentOneLink }}" target="_blank" class="document-link">
+            View Aadhaar Card
+          </a>
+        </p>
+        <p>
+          <strong>Pan Card:</strong>
+          <a href="{{ loan.documentTwoLink }}" target="_blank" class="document-link">
+            View Pan Card
+          </a>
+        </p>
+        <p>
+          <strong>Bank Statement:</strong>
+          <a href="{{ loan.documentThreeLink }}" target="_blank" class="document-link">
+            View Bank Statement
+          </a>
+        </p>
+        <p>
+          <strong>Loan Amount:</strong> ₹{{ loan.loanamount }}
+        </p>
+        <p>
+          <strong>Total Repayment:</strong> ₹{{ loan.totalRepayAmount }}
+        </p>
+      </div>
+      <div class="loan-actions">
+        <button class="btn btn-success" (click)="approveLoan(loan.loanid)">
+          Approve
+        </button>
+        <button class="btn btn-danger" (click)="openRejectModal(loan)">
+          Reject
+        </button>
+      </div>
+    </div>
+    <div *ngIf="loans.length === 0" class="text-center">
+      No Loan Requests Found
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-center mt-3">
+    <ul class="pagination">
+      <li class="page-item" [class.disabled]="pageNumber === 0">
+        <button class="page-link" (click)="onPageChange(pageNumber - 1)">Previous</button>
+      </li>
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === pageNumber">
+        <button class="page-link" (click)="onPageChange(page)">{{ page + 1 }}</button>
+      </li>
+      <li class="page-item" [class.disabled]="isLastPage">
+        <button class="page-link" (click)="onPageChange(pageNumber + 1)">Next</button>
+      </li>
+    </ul>
+  </div>
+</div>

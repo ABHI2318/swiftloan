@@ -1,0 +1,252 @@
+/* Container for the entire login section */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* enough vertical space */
+  background-color: #f7e6f7; /* Light pink-lavender background */
+  padding: 20px;
+}
+
+/* Login Box */
+.login-box {
+  background-color: #ffffff; 
+  border-radius: 8px;
+  width: 350px; /* adjust as needed */
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4a2b4a; /* A darker purple/pink-lavender for headings */
+  font-family: Arial, sans-serif;
+}
+
+/* Input Containers */
+.input-container {
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-field, .captcha-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus state for inputs */
+.input-field:focus, .captcha-input:focus {
+  border-color: #c06ac0; /* Slightly darker lavender */
+}
+
+/* CAPTCHA Container */
+.captcha-container {
+  margin-bottom: 20px;
+}
+
+/* CAPTCHA Box */
+.captcha-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* CAPTCHA Text */
+.captcha-text {
+  display: inline-block;
+  background-color: #d98cdc; /* main pink-lavender shade */
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* CAPTCHA Refresh Button */
+.refresh-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #4a2b4a; 
+  transition: color 0.3s;
+}
+.refresh-btn:hover {
+  color: #9b478f; /* darker pink-lavender */
+}
+
+/* Error Message */
+.text-danger {
+  color: #e74c3c;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #d98cdc; /* main pink-lavender color */
+  color: #ffffff; 
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Login Button */
+.login-btn:hover {
+  background-color: #c06ac0; /* slightly darker shade */
+}
+
+/* Container and box layout */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full page height */
+  background-color: #f0f2f5; /* Light gray background */
+}
+
+.login-box {
+  background-color: #fff;
+  width: 350px;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Headline style */
+.login-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Input field containers */
+.input-container {
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+.input-field {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem; /* Add left padding for icon space */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1.1rem;
+}
+
+/* CAPTCHA section */
+.captcha-container {
+  margin-bottom: 1.5rem;
+}
+.captcha-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.captcha-text {
+  display: inline-block;
+  background-color: #ececec;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.refresh-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+.refresh-btn:hover {
+  transform: rotate(180deg);
+}
+.captcha-input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+/* Login button */
+.login-btn {
+  background-color: #28a745; /* Bootstrap "success" green */
+  color: #fff;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.login-btn:hover {
+  background-color: #218838; /* Darker green */
+}
+
+/* ----------- Animations ----------- */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-in-animation {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.bounce-in-animation {
+  animation: bounceIn 0.8s ease forwards;
+}
+
+
+
+/* Adjust for smaller screens */
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 20px;
+  }
+}

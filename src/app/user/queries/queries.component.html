@@ -1,0 +1,74 @@
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()" class="container mt-4">
+  <div class="mb-3">
+    <label for="question" class="form-label">Question:</label>
+    <textarea
+      id="question"
+      formControlName="question"  
+      rows="4"
+      class="form-control"
+    ></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="querytype" class="form-label">Query Type:</label>
+    <select id="querytype" formControlName="querytype" class="form-control">
+      <option value="Emi issues">Emi issues</option>
+      <option value="Loan status">Loan status</option>
+      <option value="Payment problems">Payment problems</option>
+      <option value="Others">Others</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="uploadForm.invalid" class="btn btn-primary">
+    Submit Query
+  </button>
+</form>
+
+<router-outlet></router-outlet>
+<!-- Add this modal in your HTML -->
+<!-- <div
+  class="modal fade"
+  id="queryModal"
+  tabindex="-1"
+  aria-labelledby="queryModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="queryModalLabel">Submitted Queries</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p *ngFor="let query of submittedQueries">{{ query }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  <div class="modal fade" id="queryModal" tabindex="-1" role="dialog" aria-labelledby="queryModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="queryModalLabel">Submitted Queries</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li *ngFor="let query of submittedQueries">
+              <strong>Question:</strong> {{ query.question }} <br />
+              <strong>Query Type:</strong> {{ query.querytype }} <br />
+              <strong>Status:</strong> {{ query.status }}
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<router-outlet></router-outlet> -->

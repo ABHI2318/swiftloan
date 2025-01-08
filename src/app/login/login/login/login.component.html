@@ -1,0 +1,60 @@
+<div class="login-container fade-in-animation">
+  <div class="login-box bounce-in-animation">
+    <h2>
+      <i class="fas fa-user-circle"></i>
+      Login
+    </h2>
+    <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+      <!-- USERNAME -->
+      <div class="input-container">
+        <i class="fas fa-user icon"></i>
+        <input
+          type="text"
+          placeholder="Enter your username"
+          formControlName="username"
+          class="input-field"
+        />
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="input-container">
+        <i class="fas fa-lock icon"></i>
+        <input
+          type="password"
+          placeholder="Enter your password"
+          formControlName="password"
+          class="input-field"
+        />
+      </div>
+
+      <!-- CAPTCHA -->
+      <div class="captcha-container">
+        <div class="captcha-box">
+          <span [innerHTML]="captchaText" class="captcha-text"></span>
+          <button type="button" (click)="generateCaptcha()" class="refresh-btn">
+            <i class="fas fa-sync-alt"></i>
+          </button>
+        </div>
+        <input
+          type="text"
+          placeholder="Enter CAPTCHA"
+          formControlName="captchaInput"
+          class="captcha-input"
+        />
+        <div *ngIf="captchaError" class="text-danger">
+          <small>Incorrect CAPTCHA. Please try again.</small>
+        </div>
+      </div>
+
+      <!-- LOGIN BUTTON -->
+      <button type="submit" class="login-btn">
+        <i class="fas fa-sign-in-alt"></i>
+        Log In
+      </button>
+    </form>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+  

@@ -1,0 +1,144 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc; /* Soft background color */
+    color: #333; /* Dark text for readability */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container for the Loan Schemes section */
+  .loan-schemes-container {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    padding: 30px;
+    width: 95%; /* Responsive width */
+    max-width: 1200px; /* Limit width for larger screens */
+  }
+  
+  /* Header */
+  h2 {
+    color: #007bff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Table Header */
+  thead {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: left;
+    font-weight: 600;
+  }
+  
+  /* Table Rows */
+  tbody tr {
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  
+  tbody tr:hover {
+    background-color: #e9ecef; /* Slightly darker on hover */
+  }
+  
+  tbody td {
+    padding: 15px;
+    vertical-align: middle;
+    font-size: 1rem;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-sm {
+    font-size: 0.875rem;
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  
+  /* Edit and Delete Buttons */
+  .btn-outline-warning {
+    border-color: #ffc107;
+    color: #ffc107;
+  }
+  
+  .btn-outline-warning:hover {
+    background-color: #ffc107;
+    color: #fff;
+  }
+  
+  .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  /* Pagination Controls */
+  .pagination-controls {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  
+  .pagination-controls button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 16px;
+  }
+  
+  .pagination-controls span {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+    margin: 0 10px;
+  }
+  
+  /* Page Info Section */
+  .page-info {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .loan-schemes-container {
+      padding: 15px;
+    }
+  
+    table, .pagination-controls {
+      font-size: 0.875rem;
+    }
+  
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.75rem;
+    }
+  
+    .page-info {
+      font-size: 0.85rem;
+    }
+  }
+  

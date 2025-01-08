@@ -1,0 +1,30 @@
+<div class="dashboard-container">
+  <div class="navbar">
+    <!-- Logo Section -->
+    <div class="navbar-logo">
+      <img src="assets/swift.jpeg" alt="Logo" />
+      <span><strong>SwiftLoan</strong></span>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="navbar-menu">
+      <a routerLink="loanrequest" routerLinkActive="active">View All Loans Requests</a>
+      <a routerLink="replytoenquiry" routerLinkActive="active">Respond Queries</a>
+      <a routerLink="pendingloanrequest" routerLinkActive="active">Pending Requests</a>
+    </div>
+
+    <div class="right">
+      <div class="profile">
+        <a routerLink="profile"><img src="assets/profile.png" alt="profile" width="30" height="30" /></a>
+      </div>
+      <div class="logout">
+        <button (click)="logOut()">Logout</button>
+      </div>
+    </div>
+  </div>
+    <h1></h1>
+  <!-- Main content area for routed views -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

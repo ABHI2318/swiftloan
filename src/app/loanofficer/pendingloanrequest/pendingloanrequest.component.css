@@ -1,0 +1,92 @@
+/* Container styling */
+.container.mt-5 {
+  max-width: 1200px;
+  margin: 2rem auto;
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Loan card styling */
+.loan-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.loan-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.loan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.loan-header {
+  background-color: #6c757d;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.loan-body p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.loan-body strong {
+  color: #495057;
+}
+
+.document-link {
+  color: #007bff;
+  text-decoration: underline;
+  word-wrap: break-word;
+}
+
+.document-link:hover {
+  color: #0056b3;
+}
+
+/* Action buttons */
+.loan-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.loan-actions .btn {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Pagination styling */
+.pagination {
+  margin-top: 1.5rem;
+}

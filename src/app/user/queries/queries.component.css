@@ -1,0 +1,65 @@
+/* enquiry.component.css
+.enquiry-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .enquiry-form h2 {
+    text-align: center;
+  }
+  
+  .enquiry-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .enquiry-form input,
+  .enquiry-form textarea,
+  .enquiry-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .enquiry-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .enquiry-form button:disabled {
+    background-color: #ccc;
+  }
+   */
+   .container {
+    margin: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .btn {
+    margin-right: 10px;
+  }
+  
+  .modal-body ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .modal-body li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+  }
+  

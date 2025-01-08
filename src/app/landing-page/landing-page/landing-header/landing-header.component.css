@@ -1,0 +1,96 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Changed from trust blue (#007bff) to pink-lavender */
+  background-color: #d98cdc; 
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.custom-nav-link {
+  display: inline-block;      /* Makes padding and margin work as expected */
+  padding: 0.5rem 1rem;       /* Some comfortable padding */
+  background-color: #d98cdc;  /* Example: Bootstrap's "success" green */
+  color: #fff;                /* Text color: white */
+  border-radius: 0.25rem;     /* Rounded corners */
+  text-decoration: none;      /* Remove underline */
+  font-weight: 500;           /* Slightly bold text */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.custom-nav-link:hover {
+  background-color: #d98cdc;  /* Darker green on hover */
+  color: #fff;                /* Keep text white */
+}
+
+
+/* Logo on the left */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-logo span {
+  font-size: 24px;
+  /* Keep text white for contrast against the pink background */
+  color: #ffffff; 
+  font-weight: bold;
+}
+
+/* Navbar Links on the right */
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar Links */
+.nav-link {
+  font-size: 16px;
+  /* Light color for links so they are visible on pink background */
+  color: #ffffff; 
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-link:hover {
+  /* You can keep the gold (#ffcc00) for a pop effect, or switch to another highlight color */
+  color: #ffcc00; 
+  text-decoration: underline;
+}
+
+/* Active Link */
+.nav-link.active {
+  /* Same gold color for active link, or pick a darker shade of pink if preferred */
+  color: #ffcc00; 
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar-logo {
+    margin-bottom: 15px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+  }
+}

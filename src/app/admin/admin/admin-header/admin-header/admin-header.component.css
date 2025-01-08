@@ -1,0 +1,63 @@
+/* Custom Navbar Styling */
+.navbar {
+  width: 100%;
+  height: 60px; /* Reduced height for a more compact navbar */
+  /* Pink-lavender background for the navbar */
+  background-color: #d98cdc; 
+  display: flex;
+  justify-content: space-between; /* Space out elements */
+  align-items: center; /* Vertically center items */
+  padding: 0 20px; /* Padding on left and right */
+}
+
+/* Navbar Links */
+.navbar-link {
+  color: #fff; /* White text color for links */
+  font-size: 1.1rem; /* Slightly larger font size */
+  text-decoration: none; /* Remove underline */
+  margin-right: 20px; /* Spacing between links */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover: Slightly lighter or complementary accent */
+.navbar-link:hover {
+  color: #f0aaf0;
+}
+
+/* Button Styling (Replacing 'danger' red with pink-lavender) */
+button.btn-danger {
+  background-color: #c06ac0; /* Main pink-lavender for button */
+  border: none; /* Remove border */
+  color: #fff; /* White text */
+  padding: 8px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  border-radius: 5px; /* Add a slight radius for softer corners */
+}
+
+/* Hover: Darker shade + slight scale */
+button.btn-danger:hover {
+  background-color: #a858a8; 
+  transform: scale(1.05); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start; /* Align items to the left */
+    padding: 10px; /* Reduced padding for mobile */
+  }
+
+  .navbar-link {
+    margin-right: 0; /* Remove right margin for stacked layout */
+    margin-bottom: 10px; /* Add space between links */
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  button.btn-danger {
+    width: 100%; /* Full-width button on mobile */
+    margin-top: 10px; /* Add margin between button and links */
+  }
+}

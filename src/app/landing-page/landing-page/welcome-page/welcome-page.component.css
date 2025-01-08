@@ -1,0 +1,155 @@
+/* Landing Page Container */
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  /* Optional: match color with your new theme */
+  background-color: #fafafa;
+  font-family: sans-serif;
+}
+
+/* Header Section */
+.landing-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.landing-title {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Loan Options Container */
+.loan-options-container {
+  display: flex;
+  flex-wrap: wrap; /* so cards wrap on smaller screens */
+  justify-content: center;
+  gap: 20px;       /* space between cards */
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Individual Loan Cards */
+.loan-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 300px; /* fixed width for a consistent grid look */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.loan-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.loan-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 6px 0;
+  color: #555;
+}
+
+.loan-card p strong {
+  color: #333;
+}
+
+/* Apply Button */
+.apply-button {
+  align-self: flex-start; /* keep the button left-aligned or change to center as desired */
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  margin-top: 15px;
+  cursor: pointer;
+  background-color: #007bff; /* or your pink-lavender theme color */
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #0056b3; /* darker hover color */
+}
+
+.apply-button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .loan-options-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .loan-card {
+    width: 90%; /* take up most of the screen on mobile */
+  }
+}
+.carousel-caption {
+  width:400px;
+  z-index:10;
+  color:#fff;
+  text-align:center;
+  top:50%;
+  left:10%;
+  bottom:auto;
+  -webkit-transform:translate(0, -50%);
+  -ms-transform:translate(0, -50%);
+  transform:translate(0, -50%);
+  }
+
+ 
+
+  .circle { background-color: #e3f0fe; width: 55px; height: 55px; border: 1px solid #15549a; border-radius: 100px; color: #15549a; margin: -50px auto 40px auto; padding: 10px;}
+
+  .circular{
+  padding: 30px;
+  border-radius: 50%;
+  border: 1px solid #15549a;
+  }
+
+  .circular1{
+      padding: 30px;
+      border-radius: 50%;
+      width: 90px;
+      border: 1px solid #15549a;
+  }
+
+  /* animation - float up all elements */
+
+.animated{
+  animation: transitionIn 0.75s;
+}
+@keyframes transitionIn{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.work{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.shadow:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

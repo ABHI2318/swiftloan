@@ -1,0 +1,94 @@
+<div class="container">
+    <h2>Approved Loans</h2>
+  
+    <!-- Loading Indicator -->
+    <div *ngIf="isLoading" class="loading">
+      Loading approved loans...
+    </div>
+  
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Loans Table -->
+    <table *ngIf="!isLoading && !errorMessage && dataSource.length > 0" class="loan-table">
+      <thead>
+        <tr>
+        <th>Scheme Name</th>
+          <th>Loan Amount</th>
+          <th>Time (Years)</th>
+          <th>Status</th>
+          <th>Closed</th>
+          <th>Simple Interest</th>
+          <th>Monthly Repayment</th>
+          <th>View Emi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let loan of dataSource">
+        <td>{{loan.loanschemename}}</td>
+          <td>{{ loan.loanamount | currency }}</td>
+          <td>{{ loan.time }}</td>
+          <td>{{ loan.loanstatus }}</td>
+          <td>{{ loan.closed ? 'Yes' : 'No' }}</td>
+          <td>{{ loan.simpleInterest }}%</td>
+          <td>{{ loan.monthlyRepayment | currency }}</td>
+          <td>
+            <button 
+            class="btn btn-primary btn-sm" 
+            [routerLink]="['/userdashboard/viewEmi']" 
+            [queryParams]="{ loanId: loan.loanid }" 
+            routerLinkActive="active">
+            View EMI
+          </button>
+          
+              
+          </td>
+          
+          
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- No Data Message -->
+    <div *ngIf="!isLoading && !errorMessage && dataSource.length === 0" class="no-data">
+      No approved loans found.
+    </div>
+  
+    <!-- Pagination Controls -->
+    <div class="pagination-controls d-flex justify-content-between align-items-center mt-3">
+      <button class="btn btn-outline-secondary" (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages() }}</span>
+      <button class="btn btn-outline-secondary" (click)="nextPage()" [disabled]="currentPage === totalPages()">Next</button>
+    </div>
+  
+    <!-- Page Size Control -->
+    <div class="page-size-container mt-3">
+      <label for="pageSize">Items per page:</label>
+      <input 
+        id="pageSize" 
+        type="number" 
+        class="form-control w-auto d-inline-block" 
+        [(ngModel)]="pageSize" 
+        (change)="onPageSizeChange(pageSize)" 
+        [min]="1" 
+        [max]="totalElements"
+      />
+    </div>
+  
+    <!-- Page Info -->
+    <div class="page-info mt-3">
+      <p>Showing {{ (currentPage - 1) * pageSize + 1 }} - 
+        {{ (currentPage * pageSize) > totalElements ? totalElements : (currentPage * pageSize) }} of {{ totalElements }} items</p>
+    </div>
+  </div>
+  
+  <!-- No Schemes Found -->
+  <ng-template #noSchemes>
+    <div class="alert alert-warning text-center">
+      No loan schemes found.
+    </div>
+  </ng-template>
+  
+  <router-outlet></router-outlet>

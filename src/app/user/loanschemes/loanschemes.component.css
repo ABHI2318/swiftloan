@@ -1,0 +1,68 @@
+/***************************************
+ * Container styles
+ ***************************************/
+ .loan-schemes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fde8ff; /* A soft pastel background */
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/***************************************
+ * Card styling
+ ***************************************/
+.card {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Example of a custom border color for the card */
+.border-custom {
+  border: 2px solid #af4cbf; /* Purple border */
+}
+
+/***************************************
+ * Card text
+ ***************************************/
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/***************************************
+ * Buttons
+ ***************************************/
+.btn-primary.btn-sm {
+  background-color: #af4cbf; /* Purple button */
+  border-color: #af4cbf;
+}
+.btn-primary.btn-sm:hover {
+  background-color: #921ea7;
+  border-color: #921ea7;
+}
+
+/***************************************
+ * Pagination & other UI controls
+ ***************************************/
+.pagination-controls {
+  margin-top: 1rem;
+}
+
+.page-size-container,
+.page-info {
+  margin-top: 1rem;
+}
+
+/***************************************
+ * Media queries (optional)
+ ***************************************/
+@media (max-width: 768px) {
+  .loan-schemes-container {
+    padding: 1rem;
+  }
+}
