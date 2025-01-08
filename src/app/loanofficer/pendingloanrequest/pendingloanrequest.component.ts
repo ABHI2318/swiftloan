@@ -12,7 +12,7 @@ export class PendingloanrequestComponent {
   rejectionForm: FormGroup;
   selectedLoanId: number | null = null; // Holds the ID of the selected loan
   pageNumber: number = 0;
-  pageSize: number = 10;
+  pageSize: number = 3;
   totalPages: number = 0;
   isLastPage: boolean = false;
   pages: number[] = [];

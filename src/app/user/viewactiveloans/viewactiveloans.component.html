@@ -28,12 +28,12 @@
       <tbody>
         <tr *ngFor="let loan of dataSource">
         <td>{{loan.loanschemename}}</td>
-          <td>{{ loan.loanamount | currency }}</td>
+          <td>{{ loan.loanamount | currency :'INR'}}</td>
           <td>{{ loan.time }}</td>
           <td>{{ loan.loanstatus }}</td>
           <td>{{ loan.closed ? 'Yes' : 'No' }}</td>
           <td>{{ loan.simpleInterest }}%</td>
-          <td>{{ loan.monthlyRepayment | currency }}</td>
+          <td>{{ loan.monthlyRepayment | currency :'INR'}}</td>
           <td>
             <button 
             class="btn btn-primary btn-sm" 

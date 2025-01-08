@@ -1,16 +1,7 @@
 <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()" class="container mt-4">
-  <div class="mb-3">
-    <label for="adharFile" class="form-label">Upload Adhar:</label>
-    <input type="file" id="adharFile" (change)="onFileSelect($event)" class="form-control" />
-  </div>
-  <div class="mb-3">
-    <label for="panFile" class="form-label">Upload Pan Card:</label>
-    <input type="file" id="panFile" (change)="onFileSelect($event)" class="form-control" />
-  </div>
-  <div class="mb-3">
-    <label for="bankFile" class="form-label">Upload Bank Statement:</label>
-    <input type="file" id="bankFile" (change)="onFileSelect($event)" class="form-control" />
-  </div>
+  <input type="file" (change)="onFileSelect($event, 'adhar')" class="form-control" />
+  <input type="file" (change)="onFileSelect($event, 'pan')" class="form-control" />
+  <input type="file" (change)="onFileSelect($event, 'bank')" class="form-control" />
   
 
   <div class="mb-3">
@@ -23,5 +14,6 @@
     <input id="time" formControlName="time" type="number" class="form-control" />
   </div>
 
-  <button type="submit" [disabled]="uploadForm.invalid || !file" class="btn btn-primary">Submit</button>
+  <button type="submit" [disabled]="uploadForm.invalid || !file1 || !file2 || !file3" class="btn btn-primary">Submit</button>
+
 </form>

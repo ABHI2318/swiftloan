@@ -2,9 +2,8 @@
   <h1 class="mb-4">Loan Requests</h1>
 
   <!-- Card Grid -->
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 loan-requests">
     <div class="col" *ngFor="let loan of loans">
-      <!-- Use a color border or background based on status -->
       <div class="card border-{{ getStatusColor(loan.loanstatus) }}">
         <div class="card-body">
           <h5 class="card-title">Loan ID: {{ loan.loanid }}</h5>
@@ -17,24 +16,18 @@
           </p>
           <p class="card-text">
             <strong>Status: </strong>
-            <!-- Use a Bootstrap badge to color-code the status -->
             <span class="badge bg-{{ getStatusColor(loan.loanstatus) }}">
               {{ loan.loanstatus }}
             </span>
           </p>
-
-          <!-- Only show "View Remarks" if REJECTED -->
           <button
-          *ngIf="loan.loanstatus === 'REJECTED'"
-          (click)="fetchRemarks(loan.loanid)"
-          class="btn btn-sm"
-          style="background-color: #1E90FF; color: #fff;" 
-        >
-          View Remarks
-        </button>
-        
-
-          <!-- Show remarks under the button -->
+            *ngIf="loan.loanstatus === 'REJECTED'"
+            (click)="fetchRemarks(loan.loanid)"
+            class="btn btn-sm"
+            style="background-color: #1E90FF; color: #fff;"
+          >
+            View Remarks
+          </button>
           <div *ngIf="rejectionRemarks[loan.loanid]" class="mt-2 text-danger">
             <strong>Remarks:</strong> {{ rejectionRemarks[loan.loanid] }}
           </div>
@@ -43,22 +36,24 @@
     </div>
   </div>
 
-  <!-- Pagination Controls (Optional) -->
-  <nav *ngIf="totalPages > 1" class="mt-4">
-    <ul class="pagination justify-content-center">
-      <li class="page-item" [class.disabled]="currentPage === 1">
-        <button class="page-link" (click)="changePage(currentPage - 1)">Previous</button>
-      </li>
-      <li
-        class="page-item"
-        *ngFor="let page of paginationArray"
-        [class.active]="page === currentPage"
-      >
-        <button class="page-link" (click)="changePage(page)">{{ page }}</button>
-      </li>
-      <li class="page-item" [class.disabled]="currentPage === totalPages">
-        <button class="page-link" (click)="changePage(currentPage + 1)">Next</button>
-      </li>
-    </ul>
-  </nav>
+  <!-- Sticky Pagination -->
+  <div class="pagination-container">
+    <nav *ngIf="totalPages > 1">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <button class="page-link" (click)="changePage(currentPage - 1)">Previous</button>
+        </li>
+        <li
+          class="page-item"
+          *ngFor="let page of paginationArray"
+          [class.active]="page === currentPage"
+        >
+          <button class="page-link" (click)="changePage(page)">{{ page }}</button>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <button class="page-link" (click)="changePage(currentPage + 1)">Next</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>

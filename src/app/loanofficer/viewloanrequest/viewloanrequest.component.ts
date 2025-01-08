@@ -11,7 +11,7 @@ export class ViewloanrequestComponent implements OnInit {
   rejectionRemarks: { [key: number]: string } = {};
   currentPage = 1;
   totalPages = 1;
-  pageSize = 10;
+  pageSize = 3;
   totalElements = 0;
 
   constructor(private loanService: LoanRequestService) {}

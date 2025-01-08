@@ -13,16 +13,17 @@
     <tbody>
       <tr *ngFor="let emi of emis">
         <td>{{ emi.id }}</td>
-        <td>{{ emi.amount | currency }}</td>
+        <td>{{ emi.amount | currency :'INR' }}</td>
         <td>{{ emi.date }}</td>
         <td>{{ emi.status }}</td>
         <td>
           <button 
-            class="btn btn-success btn-sm" 
-            [routerLink]="['/userdashboard/payment']" 
-            [queryParams]="{ emiId: emi.id, amount: emi.amount }">
-            Pay EMI
-          </button>
+          class="btn btn-success btn-sm" 
+          [routerLink]="emi.status === 'PAID' ? null : ['/userdashboard/payment']"
+          [queryParams]="emi.status === 'PAID' ? null : { emiId: emi.id, amount: emi.amount }"
+          [disabled]="emi.status === 'PAID'">
+          {{ emi.status === 'PAID' ? 'PAID' : 'Pay EMI' }}
+        </button>
         </td>
       </tr>
     </tbody>

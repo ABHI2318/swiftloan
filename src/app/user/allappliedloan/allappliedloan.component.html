@@ -29,10 +29,10 @@
           <!-- Apply search filter to the rows -->
           <tr *ngFor="let loan of filteredLoans">
             <td>{{ loan.loanid }}</td>
-            <td>{{ loan.loanscheme }}</td>
-            <td>{{ loan.loanamount | currency }}</td>
-            <td>{{ loan.loanstatus }}</td>
-            <td>{{ loan.monthlyRepayment | currency }}</td>
+<td>{{ loan.loanscheme }}</td>
+<td>{{ loan.loanamount | currency:'INR' }}</td>
+<td>{{ loan.loanstatus }}</td>
+<td>{{ loan.monthlyRepayment | currency:'INR' }}</td>
           </tr>
         </tbody>
       </table>
